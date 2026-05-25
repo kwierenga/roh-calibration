@@ -1,5 +1,7 @@
 # ROH calibration: a recombination- and diversity-aware weight of evidence for autozygosity
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20387797.svg)](https://doi.org/10.5281/zenodo.20387797)
+
 Calibrating runs of homozygosity (ROH) to a **prior-free Bayes factor** (weight of
 evidence) that an observed ROH reflects *recent autozygosity* rather than an
 individual's population background — resolved per locus (recombination rate) and
