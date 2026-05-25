@@ -1,0 +1,15 @@
+# NA12878 chr22 phasing-agreement trace (1000G vs Platinum)
+# each char = 250 kb window
+# 'A' = >=95% of het sites agree (consistent phasing)
+# 'a' = 80-95% agree
+# 'x' = 20-80% (mixed)
+# 'd' = 5-20% agree
+# 'D' = <=5% agree (== >=95% disagree, i.e. systematic label SWAP in 1000G phasing)
+# '.' = fewer than 5 comparable sites
+
+
+chr22:11,250,000-38,500,000
+  aAxaaAAAAAAAAAAAAAA.xAAAAAAAAAAAAAa.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+chr22:38,500,000-51,000,000
+  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

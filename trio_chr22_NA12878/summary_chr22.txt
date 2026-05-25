@@ -1,0 +1,12 @@
+# NA12878 chr22 crossover detection summary
+variants_total	925730
+phasing_convention	A
+mendel_consistency_A	0.9995
+mendel_consistency_B	0.9710
+paternal_informative_sites	32610
+maternal_informative_sites	34879
+paternal_mendel_inconsistent	0
+maternal_mendel_inconsistent	0
+paternal_crossovers	0
+maternal_crossovers	0
+min_run_threshold	2000

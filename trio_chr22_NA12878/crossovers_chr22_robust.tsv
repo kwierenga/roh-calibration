@@ -1,0 +1,7 @@
+parent	survives_interference	prev_pos	new_pos	gap_bp	prev_hap	new_hap	support_before	support_after	support_score
+paternal	True	19951187	24669828	4718641	0	1	663	1339	886.9
+paternal	False	28606095	31765581	3159486	1	0	711	813	758.6
+paternal	False	45499282	46237669	738387	0	1	982	766	860.7
+maternal	False	26189987	26721727	531740	0	1	841	662	740.8
+maternal	True	34668506	37733325	3064819	1	0	675	1201	864.3
+maternal	True	44293410	46567814	2274404	0	1	857	658	744.4

@@ -1,0 +1,32 @@
+NA12878 chr22 robust crossover detection verdict
+============================================================
+
+Method: Mendelian-deterministic sites only (one parent het, other hom)
+        Long-run threshold: 500 consecutive sites on both sides
+        Interference filter: top 1 paternal, top 2 maternal by support score
+
+Deterministic sites used: 20,671 paternal, 22,940 maternal
+
+Raw candidates: 3 paternal, 3 maternal
+Surviving interference filter: 1 paternal, 2 maternal
+
+CAVEAT
+------
+This analysis is performed on the 1000G high-coverage release 20220422
+phased VCF, which uses SHAPEIT-family phasing across the 3,202-sample
+panel with trio constraints. The raw candidate count is high (5+5 with
+MIN_RUN=500) vs. the deCODE-predicted ~1 expected for chr22 in a single
+meiosis. The interference filter selects the top candidates by support
+score, but cannot definitively distinguish:
+  (a) real meiotic crossovers, and
+  (b) parental-haplotype block-level label swaps in the released phasing.
+Both produce identical trace signatures and identical Mendelian consistency.
+
+Definitive validation requires one of:
+  - Grandparent genotypes (CEPH 1463 has NA12877/NA12879/NA12889/NA12890;
+    not present in 1000G 3,202-sample panel)
+  - Independent re-phasing with strict trio mode (SHAPEIT5)
+  - Platinum Genomes phased VCFs (Eberle 2017, 17-member pedigree phasing)
+  - deCODE recombination map (Halldorsson 2019) as a Bayesian prior on position
+
+Of these, Platinum Genomes is the lowest-friction next step.

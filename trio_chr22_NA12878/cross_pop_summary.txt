@@ -1,0 +1,24 @@
+# Cross-population per-locus IBD posterior framework
+# Chromosomes: chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22
+# deCODE map: Palsson 2024 (sex-averaged); window 1 Mb; block 0.5 cM; eps 0.001
+# ACMG test: posterior(IBD | 10 Mb) >= 0.95
+# Total wall clock: 2367.9s
+
+Genome-wide mean diversity (variant-weighted mean 2pq) by population:
+  EUR	0.1070
+  AFR	0.0807
+  EAS	0.1129
+  SAS	0.1023
+  AMR	0.0875
+
+==============================================================================
+HEADLINE: fraction of autosomal windows where ACMG 10 Mb >= 0.95 posterior
+(rows = population, cols = prior pi / relationship)
+==============================================================================
+
+population	pi=0.0156(2nd_cousin)	pi=0.0625(1st_cousin)	pi=0.125(avuncular_or_double_1c)	pi=0.25(incest_or_sibling)
+EUR	80/2756=0.029	172/2756=0.062	262/2756=0.095	386/2756=0.140
+AFR	7/2756=0.003	42/2756=0.015	89/2756=0.032	160/2756=0.058
+EAS	110/2756=0.040	212/2756=0.077	304/2756=0.110	449/2756=0.163
+SAS	64/2756=0.023	147/2756=0.053	230/2756=0.083	353/2756=0.128
+AMR	17/2756=0.006	72/2756=0.026	123/2756=0.045	211/2756=0.077

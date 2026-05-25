@@ -1,0 +1,18 @@
+# chr22 haplotype-state trace in 250 kb windows
+# '0' or '1' = haplotype state, dominant > 95% pure
+# 'x' = mixed (< 80% pure)
+# '.' = fewer than 5 informative sites
+# total windows: 154
+# first window start: 10,500,000
+# last window start:  50,750,000
+
+
+chr22:10,500,000-37,500,000
+  ruler:   1   2   5   6   7   8   9   2   1   2   3   4   5   6   7   8   9   3   1   2   3   4   5   6   7 
+  pat:   xxxxxxxxxx11xx000000000xx0000000000x00xxxx000111111111111111111111110000000000000000x000111111111111
+  mat:   xx1xxxxxxx00xx1000000x1xx0000x1111x011xxxx000100000000000111x111111111111111x00000x111111111x0000000
+
+chr22:37,500,000-51,000,000
+  ruler:   8   9   4   1   2   3   4   5   6   7   8   9   5   
+  pat:   1111111x0000000000000000000000001111111111111111111111
+  mat:   00000000000111000000000000000000xx11111111111111111111

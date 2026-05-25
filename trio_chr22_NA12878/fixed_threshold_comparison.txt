@@ -1,0 +1,13 @@
+# Fixed length is not fixed evidence: ROH lengths of EQUAL weight of
+# evidence to a 10 Mb ROH at the median-rate locus.
+# deCODE sex-averaged rate over 2607 autosomal 1-Mb windows; median 1.13 cM/Mb, range 0.01-6.03.
+
+recombination percentile	cM/Mb	equal-evidence ROH length (Mb)
+10th	0.55	20.7
+25th	0.75	15.1
+50th	1.13	10.0
+75th	1.70	6.7
+90th	2.41	4.7
+
+Across the 10th-90th percentile of recombination rate, the same evidence is reached at ROH lengths spanning ~4-fold (4.7 Mb at hot loci vs 20.7 Mb at cold loci).
+Implication: a single Mb threshold (ACMG 2/5/10 Mb; PLINK fixed --homozyg-kb) treats these as equivalent; the per-locus weight of evidence does not. A short ROH at a recombination-rich locus can be more diagnostic than a long ROH at a recombination-poor locus.

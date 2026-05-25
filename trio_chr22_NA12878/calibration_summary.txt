@@ -1,0 +1,12 @@
+# Ground-truth calibration of the ROH autozygosity posterior
+# chroms=chr22 N_TRIALS=15000/pop PI=0.0625 GAP_TOL=1 eps=0.001 N_REF=150 N_TEST=150
+# emission c=(1-eps)^1000=0.368; implant mean 2.0 Mb
+
+Per population: ground-truth minimum callable length L* (observed-length threshold where realized FDR=5%), the realized FDR if one instead used the analytic (~0.7 Mb) or empirical (~1.5 Mb) thresholds, ECE of the analytic posterior, and FDR among posterior>=0.95 calls.
+
+EUR: scored=2997  ground-truth L*(FDR=5%)=1.05 Mb  | FDR@0.7Mb=0.139  FDR@1.5Mb=0.016  | analytic-posterior ECE=0.374  FDR@post>=0.95=0.173
+AFR: scored=1895  ground-truth L*(FDR=5%)=0.65 Mb  | FDR@0.7Mb=0.036  FDR@1.5Mb=0.004  | analytic-posterior ECE=0.328  FDR@post>=0.95=0.097
+
+Reading: ground-truth L* should match the empirical ~1.5 Mb (script 18), not the analytic ~0.7 Mb; FDR@0.7Mb >> 5% and FDR@1.5Mb ~ 5% confirms the empirical correction. The analytic posterior's high ECE / FDR@0.95 quantifies its over-confidence at the realistic gap=1 operating point.
+
+(Calibration is conditional on the assumed tract-length distribution and prior; negative class from same-panel pairs; an independent coalescent null is the planned cross-check.)

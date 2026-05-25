@@ -1,0 +1,23 @@
+# Raw / re-downloadable reference data — NOT versioned (storage discipline)
+trio_chr22_NA12878/all_autosomes/
+trio_chr22_NA12878/external/
+*.vcf.gz
+*.vcf.gz.tbi
+*.tsv.gz
+
+# Session/runtime artifacts
+.session_active_*.marker
+__pycache__/
+*.pyc
+hap_genomewide.log
+emp_genomewide*.log
+trio_null_genomewide.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Edge headless scratch / temp HTML used only to render figures
+fig*_*.html
+ROH_*_2026-05-2*.html
+PROGRESS_REPORT_2026-05-23.html

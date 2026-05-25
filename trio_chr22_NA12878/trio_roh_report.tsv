@@ -1,0 +1,2 @@
+chrom	start	end	length_Mb	cMperMb	Hbar	Lstar_calib_Mb	posterior_analytic	call	parental_sharing	deletion_flag
+chr22	28738350	29276304	0.538	1.722	0.0658	1.49	0.791	background	0.997	ok
