@@ -28,9 +28,8 @@ reference data; the manuscript targets *Genetics in Medicine*.
 | `20_trio_roh_posterior.py` | Clinical trio tool: ROH calling + per-locus evidence + pedigree-F + deletion check |
 | `21_trio_background_null.py` | Leakage-free trio-children background + cryptic-relatedness screen |
 
-Figure/report generators are in the project root (`make_*.py`); they emit
-self-contained HTML with inline SVG, rendered to PDF/PNG via headless Edge
-(no matplotlib/reportlab dependency).
+Figure and manuscript generators (pure-stdlib HTML + inline SVG → headless-Edge
+PDF/PNG) are released with the published manuscript, not in this code+data deposit.
 
 ## Data (NOT in this repository — re-downloadable)
 - 1000 Genomes Project high-coverage release (3,202 samples, GRCh38), per-population AF.
@@ -39,13 +38,13 @@ self-contained HTML with inline SVG, rendered to PDF/PNG via headless Edge
 
 Raw VCFs, the deCODE map archive, and `all_autosomes/` are excluded via
 `.gitignore` (storage discipline: ~28 GB, trivially re-downloadable). Derived
-look-up tables, summaries, figures, and the manuscript are versioned.
+look-up tables and summaries are versioned here; figures and the in-preparation
+manuscript are released with publication.
 
 ## Reproduction (outline)
 1. Download the 1000G high-coverage phased VCFs and the deCODE maps into
    `trio_chr22_NA12878/` (and `all_autosomes/`, `external/`).
-2. Run scripts 16 → 21 (each prints usage; `chrom` args optional, default genome-wide).
-3. Regenerate figures and the manuscript with the root `make_*.py` scripts.
+2. Run scripts 15 → 23 (each prints usage; `chrom` args optional, default genome-wide).
 Pure Python + NumPy; Python 3.14.
 
 ## Provenance and AI assistance
