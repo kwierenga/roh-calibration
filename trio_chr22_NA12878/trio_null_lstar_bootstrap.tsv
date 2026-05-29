@@ -1,0 +1,6 @@
+pop	n_screened	n_outliers	Lstar_point_Mb	CI2.5_Mb	CI97.5_Mb	boot_median_Mb	boot_SE_Mb	n_nonconverge	B
+EUR	69	34	1.55	1.50	1.60	1.55	0.030	0	1000
+AFR	183	13	1.65	1.60	1.70	1.65	0.034	0	1000
+EAS	49	21	1.55	1.50	1.65	1.55	0.040	0	1000
+SAS	50	32	1.60	1.55	1.70	1.60	0.043	0	1000
+AMR	44	93	1.65	1.60	1.80	1.65	0.059	0	1000

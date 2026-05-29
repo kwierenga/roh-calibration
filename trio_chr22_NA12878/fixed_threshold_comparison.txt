@@ -10,4 +10,4 @@ recombination percentile	cM/Mb	equal-evidence ROH length (Mb)
 90th	2.41	4.7
 
 Across the 10th-90th percentile of recombination rate, the same evidence is reached at ROH lengths spanning ~4-fold (4.7 Mb at hot loci vs 20.7 Mb at cold loci).
-Implication: a single Mb threshold (ACMG 2/5/10 Mb; PLINK fixed --homozyg-kb) treats these as equivalent; the per-locus weight of evidence does not. A short ROH at a recombination-rich locus can be more diagnostic than a long ROH at a recombination-poor locus.
+Implication: a single Mb threshold (ACMG-2021 >3-5 Mb standard; 5-10 Mb in clinical lab practice; PLINK fixed --homozyg-kb) treats these as equivalent; the per-locus weight of evidence does not. A short ROH at a recombination-rich locus can be more diagnostic than a long ROH at a recombination-poor locus.

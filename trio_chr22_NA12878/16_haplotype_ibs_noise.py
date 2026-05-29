@@ -79,8 +79,11 @@ RNG_SEED = 17
 
 GENOTYPING_ERROR = 0.001
 WINDOW_BP = 1_000_000
-ACMG_LENGTH = 10
-ACMG_THRESHOLD = 0.95
+CONV_LENGTH = 10        # conventional clinical-lab comparison length (Mb). NB the
+                        # ACMG-2021 standard is >3-5 Mb, not 10 Mb; 10 Mb is the
+                        # common lab-practice operating point, used here only as a
+                        # fixed-length reference for the calibration-fraction test.
+POST_THRESHOLD = 0.95   # posterior decision threshold
 # Length sweep: at 10 Mb the H-bar posterior saturates to ~1.0 in every pop
 # (a 10 Mb run is essentially never chance-IBS), so the population signal that
 # now lives in H-bar is invisible there. Sweep shorter lengths to expose it.
@@ -266,7 +269,7 @@ def posterior_hap(L_mb, r, p_block, pi):
     return num / (num + (1.0 - pi) * p_chance)
 
 
-def min_callable_length(r, p_block, pi, threshold=ACMG_THRESHOLD):
+def min_callable_length(r, p_block, pi, threshold=POST_THRESHOLD):
     """Smallest ROH length (Mb) whose H-bar posterior reaches `threshold`.
     Analytic inverse of posterior_hap: solve b**(L*r/BLOCK_CM) <= RHS for L,
     with b = max(p_block, H_FLOOR), RHS = pi*p_ibd*(1-T)/(T*(1-pi))."""
@@ -315,7 +318,7 @@ def main():
                 if r <= 0:
                     continue
                 nr += 1
-                if posterior_hap(ACMG_LENGTH, r, H, DEFAULT_PI) >= ACMG_THRESHOLD:
+                if posterior_hap(CONV_LENGTH, r, H, DEFAULT_PI) >= POST_THRESHOLD:
                     nc += 1
             return nc, nr
 
@@ -349,7 +352,7 @@ def main():
                 for pop in POPULATIONS:
                     old_m2pq[(key[0], key[1], pop)] = float(f[ix[f"mean_2pq_{pop}"]])
 
-    def cal_fraction(pi, use_hap, length=ACMG_LENGTH):
+    def cal_fraction(pi, use_hap, length=CONV_LENGTH):
         out = {}
         for pop in POPULATIONS:
             nc = nr = 0
@@ -361,7 +364,7 @@ def main():
                     continue
                 nr += 1
                 pblock = H if use_hap else (1.0 - old_m2pq.get((c, w, pop), 0.0))
-                if posterior_hap(length, r, pblock, pi) >= ACMG_THRESHOLD:
+                if posterior_hap(length, r, pblock, pi) >= POST_THRESHOLD:
                     nc += 1
             out[pop] = (nc, nr)
         return out
@@ -382,7 +385,8 @@ def main():
             fh.write(f"  {pop}\t{gw[pop]:.4f}\n")
         fh.write("  (expect founder/bottleneck HIGH, AFR LOW)\n\n")
 
-        fh.write("ACMG 10 Mb >= 0.95 calibration fraction -- HAPLOTYPE-IBS noise:\n")
+        fh.write("Conventional 10 Mb >= 0.95 calibration fraction -- HAPLOTYPE-IBS noise:\n"
+                 "(10 Mb = common lab-practice point; ACMG-2021 standard is >3-5 Mb)\n")
         fh.write("population\t" + "\t".join(f"pi={pi}" for pi, _ in PRIORS) + "\n")
         for pop in POPULATIONS:
             cells = []
@@ -401,7 +405,7 @@ def main():
             fh.write(pop + "\t" + "\t".join(cells) + "\n")
 
         fh.write(f"\nMedian minimum callable ROH length (Mb), posterior>="
-                 f"{ACMG_THRESHOLD}, pi={DEFAULT_PI} -- CLINICAL HEADLINE\n"
+                 f"{POST_THRESHOLD}, pi={DEFAULT_PI} -- CLINICAL HEADLINE\n"
                  "(higher H-bar / lower diversity -> needs a longer run):\n")
         med_min = {}
         for pop in POPULATIONS:

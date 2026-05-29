@@ -1,8 +1,8 @@
 # Cross-population per-locus IBD posterior framework
 # Chromosomes: chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22
 # deCODE map: Palsson 2024 (sex-averaged); window 1 Mb; block 0.5 cM; eps 0.001
-# ACMG test: posterior(IBD | 10 Mb) >= 0.95
-# Total wall clock: 2367.9s
+# Conventional-10Mb test: posterior(IBD | 10 Mb) >= 0.95
+# Total wall clock: 2373.0s
 
 Genome-wide mean diversity (variant-weighted mean 2pq) by population:
   EUR	0.1070
@@ -12,7 +12,8 @@ Genome-wide mean diversity (variant-weighted mean 2pq) by population:
   AMR	0.0875
 
 ==============================================================================
-HEADLINE: fraction of autosomal windows where ACMG 10 Mb >= 0.95 posterior
+HEADLINE: fraction of autosomal windows where conventional 10 Mb >= 0.95 posterior
+(10 Mb = common clinical-lab point; ACMG-2021 standard is >3-5 Mb)
 (rows = population, cols = prior pi / relationship)
 ==============================================================================
 

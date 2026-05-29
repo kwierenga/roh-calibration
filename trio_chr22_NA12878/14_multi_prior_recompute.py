@@ -13,8 +13,10 @@ Output:
   per-prior TSV (full lookup table)
   combined summary showing calibration fraction at each prior
 
-This makes the prior-dependence of the ACMG 10 Mb threshold explicit and
-clinically actionable.
+This makes the prior-dependence of the conventional 10 Mb clinical-lab
+comparison point explicit and clinically actionable. (The ACMG-2021 standard
+counts segments >3-5 Mb as likely IBD; 10 Mb is common lab practice, not the
+standard.)
 """
 
 import math
@@ -36,8 +38,9 @@ GENOTYPING_ERROR = 0.001
 BLOCK_CM = 0.5
 TRACT_LENGTHS_MB = [1, 2, 3, 5, 7, 10, 15]
 THRESHOLDS = [0.50, 0.90, 0.95, 0.99]
-ACMG_LENGTH = 10
-ACMG_THRESHOLD = 0.95
+CONV_LENGTH = 10        # conventional clinical-lab comparison length (Mb); the
+                        # ACMG-2021 standard is >3-5 Mb, not 10 Mb (10 Mb = lab practice).
+POST_THRESHOLD = 0.95
 
 
 def posterior(L_mb, r_cmpermb, mean_2pq, pi, eps=GENOTYPING_ERROR,
@@ -92,7 +95,7 @@ def main():
     per_prior_stats = {}
     for pi, name in PRIORS:
         out_path = HERE / f"all_autosomes_pi_{pi:.4f}_{name}.tsv"
-        n_acmg_calibrated = 0
+        n_conv_calibrated = 0
         n_with_recomb = 0
         per_chrom = {}
         with out_path.open("w") as fh:
@@ -112,8 +115,8 @@ def main():
                 for L in TRACT_LENGTHS_MB:
                     p = posterior(L, r["cMperMb"], r["mean_2pq"], pi)
                     vals.append(f"{p:.5f}")
-                    if L == ACMG_LENGTH and p >= ACMG_THRESHOLD and r["cMperMb"] > 0:
-                        n_acmg_calibrated += 1
+                    if L == CONV_LENGTH and p >= POST_THRESHOLD and r["cMperMb"] > 0:
+                        n_conv_calibrated += 1
                         per_chrom[r["chrom"]][0] += 1
                 for thr in THRESHOLDS:
                     L = length_for_posterior(thr, r["cMperMb"], r["mean_2pq"], pi)
@@ -121,30 +124,31 @@ def main():
                 fh.write("\t".join(vals) + "\n")
         per_prior_stats[(pi, name)] = {
             "out_path": out_path,
-            "n_acmg_calibrated": n_acmg_calibrated,
+            "n_conv_calibrated": n_conv_calibrated,
             "n_with_recomb": n_with_recomb,
             "per_chrom": per_chrom,
         }
-        frac = n_acmg_calibrated / n_with_recomb if n_with_recomb else 0
+        frac = n_conv_calibrated / n_with_recomb if n_with_recomb else 0
         print(f"  pi = {pi:.4f}  ({name:25s})  "
-              f"ACMG-10Mb-calibrated windows: {n_acmg_calibrated:4d}/{n_with_recomb:4d} = {100*frac:5.1f}%")
+              f"conventional-10Mb-calibrated windows: {n_conv_calibrated:4d}/{n_with_recomb:4d} = {100*frac:5.1f}%")
 
     # summary file
     with OUT_SUMMARY.open("w") as fh:
-        fh.write("# Per-locus IBD posterior framework — calibration of ACMG-2021 10 Mb threshold\n")
-        fh.write(f"# Threshold: posterior(IBD | 10 Mb) >= {ACMG_THRESHOLD}\n")
+        fh.write("# Per-locus IBD posterior framework — calibration at the conventional 10 Mb clinical-lab point\n")
+        fh.write("# (ACMG-2021 standard is >3-5 Mb; 10 Mb is common lab practice, not the standard)\n")
+        fh.write(f"# Threshold: posterior(IBD | 10 Mb) >= {POST_THRESHOLD}\n")
         fh.write(f"# Genotyping error eps: {GENOTYPING_ERROR}\n")
         fh.write(f"# Effective independent block size: {BLOCK_CM} cM\n")
         fh.write(f"# AF source: 1000G high-coverage 20220422, EUR superpopulation\n\n")
 
         fh.write("=" * 80 + "\n")
-        fh.write("HEADLINE: fraction of autosomal windows where ACMG 10 Mb >= 0.95 posterior\n")
+        fh.write("HEADLINE: fraction of autosomal windows where conventional 10 Mb >= 0.95 posterior\n")
         fh.write("=" * 80 + "\n\n")
         fh.write("pi (Wright's F)\trelationship\tcalibrated/total\tfraction\n")
         for (pi, name) in PRIORS:
             s = per_prior_stats[(pi, name)]
-            frac = s["n_acmg_calibrated"] / s["n_with_recomb"]
-            fh.write(f"{pi:.4f}\t{name}\t{s['n_acmg_calibrated']}/{s['n_with_recomb']}\t{frac:.3f}\n")
+            frac = s["n_conv_calibrated"] / s["n_with_recomb"]
+            fh.write(f"{pi:.4f}\t{name}\t{s['n_conv_calibrated']}/{s['n_with_recomb']}\t{frac:.3f}\n")
 
         fh.write("\n" + "=" * 80 + "\n")
         fh.write("Per-chromosome breakdown at each prior (fraction calibrated)\n")

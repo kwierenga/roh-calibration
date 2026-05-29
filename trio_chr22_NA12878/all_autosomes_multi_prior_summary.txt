@@ -1,11 +1,12 @@
-# Per-locus IBD posterior framework â€” calibration of ACMG-2021 10 Mb threshold
+# Per-locus IBD posterior framework — calibration at the conventional 10 Mb clinical-lab point
+# (ACMG-2021 standard is >3-5 Mb; 10 Mb is common lab practice, not the standard)
 # Threshold: posterior(IBD | 10 Mb) >= 0.95
 # Genotyping error eps: 0.001
 # Effective independent block size: 0.5 cM
 # AF source: 1000G high-coverage 20220422, EUR superpopulation
 
 ================================================================================
-HEADLINE: fraction of autosomal windows where ACMG 10 Mb >= 0.95 posterior
+HEADLINE: fraction of autosomal windows where conventional 10 Mb >= 0.95 posterior
 ================================================================================
 
 pi (Wright's F)	relationship	calibrated/total	fraction

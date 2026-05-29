@@ -1,7 +1,7 @@
 # Haplotype-IBS (LD-aware) noise term vs per-site 2pq
 # Chromosomes: chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22
 # knobs: MAF_MIN=0.05 BLOCK_CM=0.5 MAX_SNPS_BLOCK=25 N_SUBSAMPLE=200 H_FLOOR=0.0001
-# wall clock: 4118.3s
+# wall clock: 3568.2s
 
 Genome-wide mean Hbar (P[2 haplotypes IBS over 0.5 cM]) by population:
   EAS	0.0232
@@ -11,7 +11,8 @@ Genome-wide mean Hbar (P[2 haplotypes IBS over 0.5 cM]) by population:
   AFR	0.0072
   (expect founder/bottleneck HIGH, AFR LOW)
 
-ACMG 10 Mb >= 0.95 calibration fraction -- HAPLOTYPE-IBS noise:
+Conventional 10 Mb >= 0.95 calibration fraction -- HAPLOTYPE-IBS noise:
+(10 Mb = common lab-practice point; ACMG-2021 standard is >3-5 Mb)
 population	pi=0.0156	pi=0.0625	pi=0.125	pi=0.25
 EUR	0.997	0.997	0.998	0.999
 AFR	0.997	0.998	0.999	1.000

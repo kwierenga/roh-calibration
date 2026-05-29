@@ -304,14 +304,14 @@ def main():
             p = r["posteriors_by_L"][L_focus]
             summary_lines.append(f"    {label} (r={r['cMperMb']:.2f}): P(IBD) = {p:.3f}")
 
-    # ACMG threshold comparison
+    # conventional 10 Mb comparison point
     summary_lines.append("")
     summary_lines.append("=" * 75)
-    summary_lines.append("ACMG-2021 RECOMMENDED 10 Mb THRESHOLD: locus-by-locus posterior")
+    summary_lines.append("CONVENTIONAL 10 Mb CLINICAL-LAB POINT: locus-by-locus posterior")
     summary_lines.append("=" * 75)
-    summary_lines.append("  (ACMG implicitly says posterior >= some threshold at L=10 Mb. ")
-    summary_lines.append("   This table shows whether the field's '10 Mb = confident IBD'")
-    summary_lines.append("   actually holds across chr22 loci.)")
+    summary_lines.append("  (The ACMG-2021 standard counts segments >3-5 Mb as likely IBD; many")
+    summary_lines.append("   clinical labs operationally use 5/7/10 Mb. This table shows whether")
+    summary_lines.append("   the field's '10 Mb = confident IBD' actually holds across chr22 loci.)")
     summary_lines.append("")
     summary_lines.append("    locus_range          r(cM/Mb)   <2pq>    P(IBD|10Mb)")
     for r in rows:

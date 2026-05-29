@@ -6,7 +6,7 @@ From the length-evidence law, the weight of evidence for autozygosity scales wit
 the product (recombination rate r) x (ROH length L): log10 BF is ~ proportional to
 r*L*log10(1/Hbar). Within a population H-bar is ~constant across loci, so at a
 FIXED length the evidence varies directly with the local recombination rate, which
-ranges several-fold across the genome. Hence a single Mb cutoff (e.g., ACMG 10 Mb)
+ranges several-fold across the genome. Hence a single Mb cutoff (e.g., the conventional 10 Mb)
 conflates strong and weak evidence, and a short ROH at a recombination-rich locus
 can carry the same evidence as a long ROH at a recombination-poor locus.
 
@@ -25,7 +25,8 @@ import numpy as np
 HERE = Path(__file__).parent
 DIV = HERE / "cross_pop_hap_diversity.tsv"
 OUT = HERE / "fixed_threshold_comparison.txt"
-REF_L = 10.0   # reference ROH length (Mb) at the median-rate locus (ACMG-style cutoff)
+REF_L = 10.0   # reference ROH length (Mb) at the median-rate locus (conventional
+               # clinical-lab cutoff; the ACMG-2021 standard is >3-5 Mb, not 10 Mb)
 
 
 def main():
@@ -58,7 +59,8 @@ def main():
                  f"evidence is reached at ROH lengths spanning ~{fold:.0f}-fold "
                  f"({rmed*REF_L/pct[90]:.1f} Mb at hot loci vs {rmed*REF_L/pct[10]:.1f} "
                  f"Mb at cold loci).")
-    lines.append("Implication: a single Mb threshold (ACMG 2/5/10 Mb; PLINK fixed "
+    lines.append("Implication: a single Mb threshold (ACMG-2021 >3-5 Mb standard; "
+                 "5-10 Mb in clinical lab practice; PLINK fixed "
                  "--homozyg-kb) treats these as equivalent; the per-locus weight of "
                  "evidence does not. A short ROH at a recombination-rich locus can be "
                  "more diagnostic than a long ROH at a recombination-poor locus.")

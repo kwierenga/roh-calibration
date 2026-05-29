@@ -1,0 +1,12 @@
+# Bootstrap CI on decisive ROH length L* (trio-children background null)
+# chroms=chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22  B=1000  resampling unit = trio child (screened)
+# OUTLIER_F=0.0156  CI=2.5-97.5 percentile  seed=17
+# non-converging replicates set to L*>12.00 Mb (sentinel 12.05)
+# wall=7357s
+
+pop	n_scr	L*_point	95% CI (Mb)	boot_median	SE	n_nonconv
+EUR	69	1.55	[1.50, 1.60]	1.55	0.030	0
+AFR	183	1.65	[1.60, 1.70]	1.65	0.034	0
+EAS	49	1.55	[1.50, 1.65]	1.55	0.040	0
+SAS	50	1.60	[1.55, 1.70]	1.60	0.043	0
+AMR	44	1.65	[1.60, 1.80]	1.65	0.059	0

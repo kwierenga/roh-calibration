@@ -63,8 +63,11 @@ BLOCK_CM = 0.5
 TRACT_LENGTHS_MB = [1, 2, 3, 5, 7, 10, 15]
 THRESHOLDS = [0.50, 0.90, 0.95, 0.99]
 WINDOW_BP = 1_000_000
-ACMG_LENGTH = 10
-ACMG_THRESHOLD = 0.95
+CONV_LENGTH = 10        # conventional clinical-lab comparison length (Mb); NOT the
+                        # ACMG standard (which is >3-5 Mb). 10 Mb is the common
+                        # lab-practice operating point, used here as a fixed-length
+                        # reference for the calibration-fraction test.
+POST_THRESHOLD = 0.95
 
 AF_PREFIX = {pop: f"AF_{pop}=" for pop in POPULATIONS}
 
@@ -218,7 +221,7 @@ def write_per_pop_prior_tables(all_rows):
                     for L in TRACT_LENGTHS_MB:
                         p = posterior(L, rr, m2pq, pi)
                         vals.append(f"{p:.5f}")
-                        if L == ACMG_LENGTH and rr > 0 and p >= ACMG_THRESHOLD:
+                        if L == CONV_LENGTH and rr > 0 and p >= POST_THRESHOLD:
                             n_cal += 1
                     for thr in THRESHOLDS:
                         L = length_for_posterior(thr, rr, m2pq, pi)
@@ -254,7 +257,7 @@ def main():
                 if n_var == 0 or r["cMperMb"] <= 0:
                     continue
                 nr += 1
-                if posterior(ACMG_LENGTH, r["cMperMb"], m2pq, DEFAULT_PI) >= ACMG_THRESHOLD:
+                if posterior(CONV_LENGTH, r["cMperMb"], m2pq, DEFAULT_PI) >= POST_THRESHOLD:
                     nc += 1
             return nc, nr
         ec, er = cal_frac("EUR")
@@ -300,7 +303,7 @@ def main():
         fh.write(f"# Chromosomes: {','.join(chroms)}\n")
         fh.write(f"# deCODE map: Palsson 2024 (sex-averaged); window {WINDOW_BP//10**6} Mb; "
                  f"block {BLOCK_CM} cM; eps {GENOTYPING_ERROR}\n")
-        fh.write(f"# ACMG test: posterior(IBD | {ACMG_LENGTH} Mb) >= {ACMG_THRESHOLD}\n")
+        fh.write(f"# Conventional-10Mb test: posterior(IBD | {CONV_LENGTH} Mb) >= {POST_THRESHOLD}\n")
         fh.write(f"# Total wall clock: {time.time()-t0:.1f}s\n\n")
 
         fh.write("Genome-wide mean diversity (variant-weighted mean 2pq) by population:\n")
@@ -309,7 +312,8 @@ def main():
         fh.write("\n")
 
         fh.write("=" * 78 + "\n")
-        fh.write("HEADLINE: fraction of autosomal windows where ACMG 10 Mb >= 0.95 posterior\n")
+        fh.write("HEADLINE: fraction of autosomal windows where conventional 10 Mb >= 0.95 posterior\n")
+        fh.write("(10 Mb = common clinical-lab point; ACMG-2021 standard is >3-5 Mb)\n")
         fh.write("(rows = population, cols = prior pi / relationship)\n")
         fh.write("=" * 78 + "\n\n")
         header = ["population"] + [f"pi={pi}({name})" for pi, name in PRIORS]
@@ -329,7 +333,7 @@ def main():
     print()
     print(f"  diversity (mean 2pq): " +
           ", ".join(f"{pop}={div[pop]:.3f}" for pop in POPULATIONS))
-    print(f"  ACMG-calibrated fraction @ pi={DEFAULT_PI} (1st-cousin):")
+    print(f"  conventional-10Mb-calibrated fraction @ pi={DEFAULT_PI} (1st-cousin):")
     for pop in POPULATIONS:
         nc, nr, _ = stats[(pop, "1st_cousin")]
         print(f"    {pop}: {nc}/{nr} = {100*nc/nr if nr else 0:.1f}%")

@@ -31,11 +31,11 @@ THE CLINICAL WEDGE: same 5 Mb tract, different loci
     HIGHEST r  (r=4.57): P(IBD) = 1.000
 
 ===========================================================================
-ACMG-2021 RECOMMENDED 10 Mb THRESHOLD: locus-by-locus posterior
+CONVENTIONAL 10 Mb CLINICAL-LAB POINT: locus-by-locus posterior
 ===========================================================================
-  (ACMG implicitly says posterior >= some threshold at L=10 Mb. 
-   This table shows whether the field's '10 Mb = confident IBD'
-   actually holds across chr22 loci.)
+  (The ACMG-2021 standard counts segments >3-5 Mb as likely IBD; many
+   clinical labs operationally use 5/7/10 Mb. This table shows whether
+   the field's '10 Mb = confident IBD' actually holds across chr22 loci.)
 
     locus_range          r(cM/Mb)   <2pq>    P(IBD|10Mb)
       chr22: 16,000,000- 17,000,000   4.569    0.117      1.000

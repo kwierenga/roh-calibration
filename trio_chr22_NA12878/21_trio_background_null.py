@@ -129,9 +129,12 @@ def agg_null(seg_lists, spans):
     return emp, (float(L_GRID[hit[0]]) if hit.size else float("inf"))
 
 
-def main():
+def parse_children(chroms):
+    """Parse trio children per population -> (childsegs, childtot, childspan,
+    nchild). childsegs[p][j] = list of per-chrom ROH-segment arrays for child j;
+    childtot[p][j] = ROH>=FROH_MIN_MB burden (Mb); childspan[p][j] = scanned span
+    (Mb). Extracted from main() so the bootstrap (script 24) reuses one parse."""
     t0 = time.time()
-    chroms = sys.argv[1:] or [f"chr{n}" for n in range(1, 23)]
     sp = load_superpop()
     kids = load_children(sp)
     childsegs = {p: None for p in POPS}   # per child: list of seg arrays
@@ -203,6 +206,13 @@ def main():
         print(f"  [{chrom}] children/pop " + " ".join(f"{p}:{nchild[p]}" for p in POPS)
               + f"  ({time.time()-t0:.0f}s)")
         sys.stdout.flush()
+    return childsegs, childtot, childspan, nchild
+
+
+def main():
+    t0 = time.time()
+    chroms = sys.argv[1:] or [f"chr{n}" for n in range(1, 23)]
+    childsegs, childtot, childspan, nchild = parse_children(chroms)
 
     div = load_div(chroms[0])
     rmean = np.nanmean([v[1] for p in POPS for v in div[p].values()]) if any(div.values()) else 1.2

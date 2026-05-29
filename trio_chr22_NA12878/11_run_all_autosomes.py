@@ -8,7 +8,7 @@ Inputs:
 
 Output:
   - all_autosomes_posterior_lookup.tsv  (per-window posterior across all 22)
-  - all_autosomes_summary.txt           (per-chromosome summary + ACMG-threshold scrutiny)
+  - all_autosomes_summary.txt           (per-chromosome summary + conventional-10Mb scrutiny)
 
 Re-uses the per-chromosome logic from 09_posterior_prototype.py with chrom as
 a parameter. Fully scripted; no prompts.
@@ -175,13 +175,13 @@ def main():
             continue
         n_w = len(rows)
         n_v = sum(r["n_variants"] for r in rows)
-        n_acmg_calibrated = sum(1 for r in rows if r["cMperMb"] > 0 and r["posteriors_by_L"][10] >= 0.95)
+        n_conv_calibrated = sum(1 for r in rows if r["cMperMb"] > 0 and r["posteriors_by_L"][10] >= 0.95)
         n_w_with_recomb = sum(1 for r in rows if r["cMperMb"] > 0)
         print(f"  [{chrom}] {n_w} windows, {n_v:,} variants, "
-              f"{n_acmg_calibrated}/{n_w_with_recomb} windows have P(IBD|10Mb)>=0.95 "
+              f"{n_conv_calibrated}/{n_w_with_recomb} windows have P(IBD|10Mb)>=0.95 "
               f"({time.time() - ts:.1f}s)")
         sys.stdout.flush()
-        per_chrom_stats.append((chrom, n_w, n_v, n_acmg_calibrated, n_w_with_recomb))
+        per_chrom_stats.append((chrom, n_w, n_v, n_conv_calibrated, n_w_with_recomb))
         all_rows.extend(rows)
 
     # Write big lookup
@@ -225,7 +225,7 @@ def main():
     print(f"  -> {OUT_LOOKUP}")
     print(f"  -> {OUT_SUMMARY}")
     if total_with_recomb:
-        print(f"  HEADLINE: ACMG 10 Mb threshold delivers >=0.95 posterior at "
+        print(f"  HEADLINE: conventional 10 Mb threshold delivers >=0.95 posterior at "
               f"{total_calibrated}/{total_with_recomb} = "
               f"{100*total_calibrated/total_with_recomb:.1f}% of autosomal windows")
 
