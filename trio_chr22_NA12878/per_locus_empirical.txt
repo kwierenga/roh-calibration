@@ -1,0 +1,12 @@
+Per-locus EMPIRICAL decisive length (screened children=395, pooled; 5 recombination-rate bins, B=500 bootstrap)
+chroms=chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22  THR_PC=1.29e-03  prior=1st-cousin
+==========================================================================
+ rate cM/Mb (bin mean)   n_seg      L* empirical (95% CI)  L* closed-form
+                  0.35 4448528       2.50 (2.40-2.60) Mb           2.38 Mb
+                  0.76 5537361       1.25 (1.20-1.30) Mb           1.11 Mb
+                  1.08 5845876       0.90 (0.85-0.95) Mb           0.78 Mb
+                  1.53 6105962       0.65 (0.65-0.70) Mb           0.55 Mb
+                  2.54 6434094       0.50 (0.45-0.50) Mb           0.33 Mb
+
+Empirical L*: DECREASES with rate (thesis supported).
+Empirical vs closed-form: the closed form is the analytic prediction; divergence quantifies its anti-conservatism per bin.

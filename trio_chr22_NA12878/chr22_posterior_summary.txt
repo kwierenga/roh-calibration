@@ -1,4 +1,9 @@
 ===========================================================================
+SUPERSEDED PROTOTYPE (script 09): chr22 only, and uses the RETIRED per-site
+2pq noise term (replaced by the LD-aware H-bar / empirical background). Kept
+for provenance only. For current results see all_autosomes_summary.txt,
+trio_null_summary.txt, and the manuscript. Do NOT cite these numbers.
+===========================================================================
 chr22 per-locus IBD posterior, prior pi = 0.0625 (1st cousin), pop = EUR
 ===========================================================================
 

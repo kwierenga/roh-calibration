@@ -1,0 +1,47 @@
+# Consolidated literature cases for the ROH calibration manuscript
+# (excludes Najmabadi 2011 n=356; that cohort handled separately by 33_najmabadi_stratified.py)
+# baseline: 25.0% of 1 Mb windows at r>=1.5x median; 12.1% at >=2.0x. genome-wide median=1.13 cM/Mb.
+# (class abbreviations: outbred = no consanguinity declared; isolate = old founder event in a non-recently-consanguineous population; UPD = uniparental disomy; founder = known specific founder mutation; consanguineous = 1st-cousin or closer)
+
+source           case             gene               chrom   ROH_Mb  r(cM/Mb)  ratio  class
+Hildebrandt2009  F30-1            NPHP4              chr1     2.10      2.06   1.82  outbred
+Hildebrandt2009  A1730-1          NPHS2              chr1     2.70      0.65   0.57  outbred
+Hildebrandt2009  A1730-2          NPHS2              chr1     2.70      0.65   0.57  outbred
+Hildebrandt2009  F408             NPHP5/IQCB1        chr3     5.18      0.72   0.63  outbred (Swiss founder)
+Hildebrandt2009  F399-1           NPHP5/IQCB1        chr3     8.25      0.72   0.63  outbred
+Hildebrandt2009  A237             NPHS2 R138Q        chr1     2.30      0.65   0.57  founder (European)
+Hildebrandt2009  A825             NPHS2 R138Q        chr1     2.30      0.65   0.57  founder (European)
+Schuurs2011      ARMR1            chr16 78-80Mb      chr16    2.60      2.43   2.14  outbred (candidate)
+Schuurs2011      ARMR1            chr19 39-50Mb MRT1 chr19   11.00      1.34   1.18  outbred (candidate)
+Schuurs2011      ARMR4            chr4 32-35Mb       chr4     2.50      0.66   0.58  outbred (candidate)
+Schuurs2011      ARMR4            chr6 27-29Mb HLA   chr6     2.70      0.14   0.13  outbred (candidate)
+Schuurs2011      ARMR4            chr11 48-50Mb      chr11    2.20        NA     NA  outbred (candidate)
+Schuurs2011      ARMR7            chr6 26-29Mb HLA   chr6     2.40        NA     NA  outbred (candidate)
+Schuurs2011      ARMR7            chr7 117-120Mb     chr7     2.40      0.38   0.34  outbred (candidate)
+Schuurs2011      ARMR8            chr6 130-139Mb     chr6     8.40      1.29   1.14  outbred (candidate)
+Schuurs2011      ARMR8            chr9 131-134Mb     chr9     2.20      2.23   1.96  outbred (candidate)
+Schuurs2011      ARMR8            chr11 48-50Mb      chr11    2.40        NA     NA  outbred (candidate)
+Schuurs2011      ARMR9            chr6 62-65Mb       chr6     2.60      0.26   0.23  outbred (candidate)
+Schuurs2011      ARMR9            chr8 47-50Mb       chr8     2.90        NA     NA  outbred (candidate)
+GomezDiaz2017    Tlaxcala isolate CAPN3              chr15    6.60      0.43   0.38  isolate (older founder)
+Bayes2017        PIGT fam2 270250 PIGT               chr20   11.00      1.37   1.21  consanguineous_1st-cousin (Afghani)
+Prasad2018       ROH04            TYR                chr11      NA      0.42   0.37  consanguineous (declared)
+Prasad2018       ROH22            PCCB               chr3       NA      0.57   0.50  outbred-declared
+Prasad2018       ROH26            SLC25A15           chr13      NA      1.17   1.03  outbred
+Prasad2018       ROH31            NDUFV2             chr18      NA      3.14   2.76  2nd-cousin
+Prasad2018       ROH44            TPP1               chr11      NA      1.99   1.75  1st-cousin
+Prasad2018       ROH52            GJB2               chr13      NA      2.10   1.85  outbred
+Pengelly2018     DDD 265247       PIGH               chr14   25.20      0.93   0.82  consanguineous_1st-cousin (Pakistani)
+
+=== Outbred/isolate subset, n=20 cases with ROH length ===
+  mean ROH = 3.82 Mb
+  SD       = 2.62
+  median   = 2.60 Mb
+  range    = [2.10, 11.00] Mb
+  ROH <= 3 Mb: 15/20 (75%)
+  ROH <= 5 Mb: 15/20 (75%)
+  ROH <= 10 Mb: 19/20 (95%)
+
+  locus enrichment (outbred/isolate subset only):
+  3/16 = 18.8% at r>=1.5x median (baseline 25.0%, p=0.804)
+  1/16 = 6.2% at r>=2.0x median (baseline 12.1%, p=0.873)

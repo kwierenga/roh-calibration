@@ -1,0 +1,29 @@
+source	case	gene	chrom	midpoint_bp	ROH_Mb	class	build	cMperMb	ratio_to_median	note
+Hildebrandt2009	F30-1	NPHP4	chr1	5988000	2.10	outbred	GRCh38	2.062	1.817	chr1p36.31 telomere; parents related 10 generations back
+Hildebrandt2009	A1730-1	NPHS2	chr1	179534000	2.70	outbred	GRCh38	0.649	0.572	chr1q25.2; sib pair
+Hildebrandt2009	A1730-2	NPHS2	chr1	179534000	2.70	outbred	GRCh38	0.649	0.572	chr1q25.2; sib pair
+Hildebrandt2009	F408	NPHP5/IQCB1	chr3	121750000	5.18	outbred (Swiss founder)	GRCh38	0.717	0.632	chr3q13.33
+Hildebrandt2009	F399-1	NPHP5/IQCB1	chr3	121750000	8.25	outbred	GRCh38	0.717	0.632	chr3q13.33
+Hildebrandt2009	A237	NPHS2 R138Q	chr1	179534000	2.30	founder (European)	GRCh38	0.649	0.572	chr1q25.2 founder mutation
+Hildebrandt2009	A825	NPHS2 R138Q	chr1	179534000	2.30	founder (European)	GRCh38	0.649	0.572	chr1q25.2 founder mutation
+Schuurs2011	ARMR1	chr16 78-80Mb	chr16	79500000	2.60	outbred (candidate)	GRCh37	2.433	2.144	shared sib SROH
+Schuurs2011	ARMR1	chr19 39-50Mb MRT11	chr19	44000000	11.00	outbred (candidate)	GRCh37	1.343	1.183	MRT11 locus overlap
+Schuurs2011	ARMR4	chr4 32-35Mb	chr4	33500000	2.50	outbred (candidate)	GRCh37	0.656	0.579	
+Schuurs2011	ARMR4	chr6 27-29Mb HLA	chr6	28000000	2.70	outbred (candidate)	GRCh37	0.145	0.128	HLA region
+Schuurs2011	ARMR4	chr11 48-50Mb	chr11	49200000	2.20	outbred (candidate)	GRCh37	NA	NA	
+Schuurs2011	ARMR7	chr6 26-29Mb HLA	chr6	27500000	2.40	outbred (candidate)	GRCh37	NA	NA	HLA region
+Schuurs2011	ARMR7	chr7 117-120Mb	chr7	118600000	2.40	outbred (candidate)	GRCh37	0.381	0.335	
+Schuurs2011	ARMR8	chr6 130-139Mb	chr6	134700000	8.40	outbred (candidate)	GRCh37	1.288	1.135	
+Schuurs2011	ARMR8	chr9 131-134Mb	chr9	132600000	2.20	outbred (candidate)	GRCh37	2.229	1.964	
+Schuurs2011	ARMR8	chr11 48-50Mb	chr11	49000000	2.40	outbred (candidate)	GRCh37	NA	NA	
+Schuurs2011	ARMR9	chr6 62-65Mb	chr6	63300000	2.60	outbred (candidate)	GRCh37	0.255	0.225	
+Schuurs2011	ARMR9	chr8 47-50Mb	chr8	48500000	2.90	outbred (candidate)	GRCh37	NA	NA	
+GomezDiaz2017	Tlaxcala isolate	CAPN3	chr15	42400000	6.60	isolate (older founder)	GRCh37	0.433	0.381	Mexican Nahuatl + mestizo isolate; pooled DNA of 3 affecteds
+Bayes2017	PIGT fam2 270250	PIGT	chr20	44100000	11.00	consanguineous_1st-cousin (Afghani)	GRCh38	1.373	1.210	chr20q13; F=1/15-1/19 estimated
+Prasad2018	ROH04	TYR	chr11	89000000	NA	consanguineous (declared)	GRCh38	0.418	0.369	chr11q14.3
+Prasad2018	ROH22	PCCB	chr3	136000000	NA	outbred-declared	GRCh38	0.567	0.499	chr3q22.3
+Prasad2018	ROH26	SLC25A15	chr13	40800000	NA	outbred	GRCh38	1.165	1.027	chr13q14.11
+Prasad2018	ROH31	NDUFV2	chr18	9100000	NA	2nd-cousin	GRCh38	3.137	2.764	chr18p11.22 subtelomere
+Prasad2018	ROH44	TPP1	chr11	6600000	NA	1st-cousin	GRCh38	1.988	1.752	chr11p15.4 telomere
+Prasad2018	ROH52	GJB2	chr13	20700000	NA	outbred	GRCh38	2.100	1.851	chr13q12.11 DFNB1
+Pengelly2018	DDD 265247	PIGH	chr14	68060000	25.20	consanguineous_1st-cousin (Pakistani)	GRCh38	0.932	0.822	chr14q24

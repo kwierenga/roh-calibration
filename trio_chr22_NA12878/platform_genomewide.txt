@@ -1,0 +1,14 @@
+# Genome-wide platform sensitivity of L* (v2, per-chrom checkpointed)
+# chroms=chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22  PI=0.0625  GAP_TOL=1  OUTLIER_F=0.0156
+# wall=9s
+
+platform	EUR	AFR	EAS	SAS	AMR	avg density	note
+WGS_full	1.55	1.65	1.55	1.60	1.65	2349	dense WGS, full common-SNP density
+thin_1/2	1.95	2.05	1.50	1.75	2.00	1175	random thinning, every 2th common SNP
+thin_1/5	nan	2.15	nan	nan	nan	470	random thinning, every 5th common SNP
+thin_1/10	nan	2.80	nan	nan	nan	235	random thinning, every 10th common SNP
+thin_1/20	nan	nan	nan	nan	nan	117	random thinning, every 20th common SNP
+CytoSNP-850K-class	nan	1.50	nan	1.20	nan	280	clinical array proxy, top-MAF ascertainment
+CytoScan-HD-class	nan	1.45	nan	nan	nan	200	clinical array proxy, top-MAF ascertainment
+250K-class	nan	1.50	nan	nan	nan	100	clinical array proxy, top-MAF ascertainment
+Random-300/Mb	nan	2.00	nan	nan	nan	300	array density without MAF ascertainment (foil)

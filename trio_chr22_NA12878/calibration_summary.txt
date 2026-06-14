@@ -1,12 +1,16 @@
 # Ground-truth calibration of the ROH autozygosity posterior
-# chroms=chr22 N_TRIALS=15000/pop PI=0.0625 GAP_TOL=1 eps=0.001 N_REF=150 N_TEST=150
+# GENOME-WIDE: 22 autosomes -- these supersede the earlier chr22 prototype L* values.
+# chroms=chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22 N_TRIALS=20000/pop PI=0.0625 GAP_TOL=1 eps=0.001 N_REF=150 N_TEST=150
 # emission c=(1-eps)^1000=0.368; implant mean 2.0 Mb
 
 Per population: ground-truth minimum callable length L* (observed-length threshold where realized FDR=5%), the realized FDR if one instead used the analytic (~0.7 Mb) or empirical (~1.5 Mb) thresholds, ECE of the analytic posterior, and FDR among posterior>=0.95 calls.
 
-EUR: scored=2997  ground-truth L*(FDR=5%)=1.05 Mb  | FDR@0.7Mb=0.139  FDR@1.5Mb=0.016  | analytic-posterior ECE=0.374  FDR@post>=0.95=0.173
-AFR: scored=1895  ground-truth L*(FDR=5%)=0.65 Mb  | FDR@0.7Mb=0.036  FDR@1.5Mb=0.004  | analytic-posterior ECE=0.328  FDR@post>=0.95=0.097
+EUR: scored=112668  ground-truth L*(FDR=5%)=1.40 Mb  | FDR@0.7Mb=0.204  FDR@1.5Mb=0.040  | analytic-posterior ECE=0.444  FDR@post>=0.95=0.128
+AFR: scored=60689  ground-truth L*(FDR=5%)=0.85 Mb  | FDR@0.7Mb=0.067  FDR@1.5Mb=0.014  | analytic-posterior ECE=0.403  FDR@post>=0.95=0.112
+EAS: scored=121441  ground-truth L*(FDR=5%)=1.35 Mb  | FDR@0.7Mb=0.212  FDR@1.5Mb=0.036  | analytic-posterior ECE=0.456  FDR@post>=0.95=0.152
+SAS: scored=105128  ground-truth L*(FDR=5%)=1.20 Mb  | FDR@0.7Mb=0.162  FDR@1.5Mb=0.028  | analytic-posterior ECE=0.466  FDR@post>=0.95=0.142
+AMR: scored=106602  ground-truth L*(FDR=5%)=1.55 Mb  | FDR@0.7Mb=0.213  FDR@1.5Mb=0.052  | analytic-posterior ECE=0.425  FDR@post>=0.95=0.128
 
-Reading: ground-truth L* should match the empirical ~1.5 Mb (script 18), not the analytic ~0.7 Mb; FDR@0.7Mb >> 5% and FDR@1.5Mb ~ 5% confirms the empirical correction. The analytic posterior's high ECE / FDR@0.95 quantifies its over-confidence at the realistic gap=1 operating point.
+Reading (genome-wide (22 autosomes)): the ground-truth L*(FDR=5%) is population-dependent, ranging 0.85-1.55 Mb (AFR shortest, AMR longest), bracketed by the analytic (~0.7 Mb) and empirical (~1.5 Mb) thresholds. The empirical ~1.5 Mb operating point gives realized FDR@1.5Mb = 1.4-5.2% (target 5%), so it is near/above target -- a defensible clinical choice trading sensitivity for specificity. The analytic *posterior*, separately, is over-confident as a calibrated probability (ECE 0.40-0.47; among post>=0.95 calls realized FDR 11-15%), so the closed-form law should be used for intuition, not for clinical probability statements.
 
 (Calibration is conditional on the assumed tract-length distribution and prior; negative class from same-panel pairs; an independent coalescent null is the planned cross-check.)

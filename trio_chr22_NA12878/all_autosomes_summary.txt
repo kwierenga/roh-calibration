@@ -2,7 +2,7 @@
 # Population AF: EUR; Prior pi: 0.0625; Block cM: 0.5
 # Total wall clock: 3010.2s
 
-chrom	n_windows	n_variants	n_windows_acmg_calibrated	n_windows_with_recomb	fraction_calibrated
+chrom	n_windows	n_variants	n_windows_decisive_at_10Mb	n_windows_with_recomb	fraction_decisive
 chr1	232	1682719	4	231	0.017
 chr2	243	1709269	5	243	0.021
 chr3	199	1436268	11	199	0.055

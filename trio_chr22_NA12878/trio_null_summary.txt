@@ -1,22 +1,22 @@
 # Trio-children background null (leakage-free, cryptic-relatedness-screened)
-# chroms=chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22 children=588 PI=0.0625 GAP_TOL=1 OUTLIER_F=0.0156 (ROH>=1.0Mb)
-# prior-free Bayes factor BF(L)=c/p_background(L), c=0.368. wall=7175s
+# chroms=chr22 children=588 PI=0.0625 GAP_TOL=1 OUTLIER_F=0.0156 (ROH>=1.0Mb)
+# prior-free Bayes factor BF(L)=c/p_background(L), c=0.368. wall=376s
 
 Minimum 'callable' length L* (posterior>=0.95, pi=0.0625) per population:
 pop	n_children	n_outliers(F_ROH>0.0156)	L*_all	L*_screened	Hbar_gw	analytic_L*
-EUR	103	34	1.75	1.55	0.0231	0.73
-AFR	196	13	1.90	1.65	0.0076	0.56
-EAS	70	21	1.75	1.55	0.0266	0.76
-SAS	82	32	7.75	1.60	0.0200	0.70
-AMR	137	93	2.80	1.65	0.0230	0.73
+EUR	103	17	1.10	0.70	0.0295	0.41
+AFR	196	21	1.05	0.60	0.0126	0.33
+EAS	70	10	10.85	0.70	0.0313	0.42
+SAS	82	12	3.25	0.65	0.0247	0.39
+AMR	137	38	1.80	0.65	0.0301	0.42
 
 Weight of evidence log10 BF(L) at tabulated lengths (cryptic-relatedness-screened background):
 L_Mb	EUR	AFR	EAS	SAS	AMR
-0.5	1.33	1.58	1.29	1.37	1.36
-1.0	1.97	2.02	1.95	1.97	1.95
-1.5	2.45	2.38	2.42	2.39	2.35
-2.0	2.85	2.70	2.83	2.81	2.71
-3.0	3.58	3.18	3.36	3.40	3.26
-5.0	4.47	4.04	3.98	4.38	3.66
+0.5	2.02	2.32	1.89	2.09	2.13
+1.0	11.57	11.57	11.57	11.57	11.57
+1.5	11.57	11.57	11.57	11.57	11.57
+2.0	11.57	11.57	11.57	11.57	11.57
+3.0	11.57	11.57	11.57	11.57	11.57
+5.0	11.57	11.57	11.57	11.57	11.57
 
 thr p_chance for posterior>=0.95: 1.29e-03. Children are DISJOINT from the unrelated panel used to estimate H-bar. L*_screened excludes children with recent shared ancestry (F_ROH outliers).

@@ -1,0 +1,20 @@
+# Emission-model sensitivity of the decisive length L* (item-5 hardening)
+# chroms=chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22 children=588 gap=1 screen OUTLIER_F=0.0156 eps=0.001 pi=0.0625 posterior>=0.95 wall=16571s
+# c(L=1.5) per model shows the emission magnitude at a representative length.
+
+pop     dens/Mb  N(1.5Mb)   L*_flat  L*_tol  L*_strict  L*_budget   c(1.5):flat/tol/strict
+EUR      2212.3     3318      1.55    1.05      6.60      6.60   0.368/0.997/0.0361
+AFR      3102.1     4653      1.65    1.00      8.40      8.40   0.368/0.995/0.0095
+EAS      2046.0     3069      1.55    1.10      9.35      9.35   0.368/0.997/0.0464
+SAS      2294.6     3442      1.60    1.10      6.80      6.80   0.368/0.997/0.0319
+AMR      2284.9     3427      1.65    1.10     11.55     11.55   0.368/0.997/0.0324
+
+Reading: the decisive length is sensitive to the emission term ONLY through the
+genotyping-error tolerance. The emission consistent with the het-tolerant caller
+used here ('tol', which bridges an isolated mismatch, GAP_TOL=1) gives a SHORTER L*
+(1.0-1.1 Mb) than the flat nominal constant (1.55-1.65 Mb), so the published flat-c
+headline is mildly CONSERVATIVE, not anti-conservative. Only an unrealistic
+zero-tolerance emission ('strict', c=(1-eps)^N, where a single error breaks the run)
+inflates L* to ~7-12 Mb; that regime does not apply to callers that tolerate isolated
+errors (e.g. PLINK --homozyg-window-het). The flat constant is retained as the
+conservative reported value.

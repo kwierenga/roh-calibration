@@ -1,0 +1,32 @@
+# Independent coalescent non-IBD null (msprime + stdpopsim OOA_3G09)
+# PURPOSE: a relatedness-free MAGNITUDE check on the decisive length L*.
+# Use it to confirm that a null with NO cryptic relatedness still lands at the
+# ~Mb scale of the SCREENED real-data L* (not the inflated unscreened value).
+# It is NOT used for the cross-ancestry ORDERING (see caveat below).
+# ndip=120/pop total=1000Mb/pop chunk=25Mb x40 mu=2.35e-08 r=1.25e-08 (flat) seed=17 MAF>=0.05 pi=0.0625 posterior>=0.95 B=500 wall=754s
+# Homozygous runs over common SNPs (MAF>=MAF_MIN within the simulated pop),
+# scored with script 21's identical p_background / posterior threshold.
+
+pop   L*_coal_gap1 [95% CI]      | real GW screened   real GW unscreened
+AFR   1.40 [1.00,2.30]           1.65               1.05
+EUR   0.85 [0.75,1.05]           1.55               1.10
+EAS   0.60 [0.60,0.65]           1.55               10.85
+
+(gap0 L*: AFR=1.40  EUR=0.80  EAS=0.50 Mb)
+
+READING (magnitude): the coalescent L* sits at the ~Mb scale of the SCREENED
+real-data L*, NOT at the inflated unscreened value (e.g. the EAS 10.85 Mb
+artifact). Because the simulation has no relatedness by construction, this
+supports that the real-data unscreened inflation is cryptic relatedness and that
+the F_ROH screen removes it rather than manufacturing the result. The direct
+primary evidence for that is the script-36 Table B screen-sensitivity on REAL
+data (removing ~2 of 70 EAS children collapses the unscreened L*).
+
+CAVEAT (ordering, stated honestly): a NEUTRAL OOA model with a flat
+recombination rate does NOT reproduce the empirical AFR-shortest ordering. AFR's
+neutral common-variant SFS loads MAF near 0.05 (low 2pq -> longer chance runs),
+which in the model outweighs AFR's shorter-LD effect; in real data the LD effect
+dominates and AFR is shortest. So the ancestry ordering rests on the REAL-DATA
+nulls (scripts 18/21), not on this simulation. SAS/AMR are not in the 3-
+population model and are omitted. AF and run-measurement use the same simulated
+individuals (~1/ndip self-inclusion bias, negligible at ndip>=100).

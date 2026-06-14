@@ -1,0 +1,24 @@
+source	case	locus	chrom	midpoint_bp	ROH_Mb	cMperMb	ratio_to_median	percentile	build_note
+Hildebrandt2009	F30-1	NPHP4	chr1	5988000	2.1	2.0616	1.817	84.23	GRCh38 gene midpoint
+Hildebrandt2009	A1730	NPHS2	chr1	179534000	2.7	0.6493	0.572	16.84	GRCh38 gene midpoint
+Hildebrandt2009	F399-1	NPHP5/IQCB1	chr3	121750000	8.25	0.7172	0.632	22.40	GRCh38 gene midpoint
+Hildebrandt2009	F408	NPHP5/IQCB1	chr3	121750000	5.18	0.7172	0.632	22.40	GRCh38 gene midpoint
+Hildebrandt2009	A237/A825	NPHS2 R138Q founder	chr1	179534000	2.3	0.6493	0.572	16.84	GRCh38 gene midpoint
+Prasad2018	ROH31	NDUFV2	chr18	9100000	NA	3.1368	2.764	96.62	GRCh38 gene midpoint
+Prasad2018	—	GJB2	chr13	20700000	NA	2.0999	1.851	84.81	GRCh38 gene midpoint
+Prasad2018	—	TPP1	chr11	6600000	NA	1.9877	1.752	82.70	GRCh38 gene midpoint
+Prasad2018	—	SLC25A15	chr13	40800000	NA	1.1655	1.027	52.01	GRCh38 gene midpoint
+Prasad2018	—	TYR	chr11	89000000	NA	0.4183	0.369	3.80	GRCh38 gene midpoint
+Prasad2018	—	PCCB	chr3	136000000	NA	0.5667	0.499	11.51	GRCh38 gene midpoint
+Schuurs2011-T3	ARMR1	chr16 78-80Mb	chr16	79500000	2.6	2.4326	2.144	90.53	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR1	chr19 39-50Mb (MRT11)	chr19	44000000	11.0	1.3428	1.183	60.95	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR4	chr4 32-35Mb	chr4	33500000	2.5	0.6565	0.579	17.38	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR4	chr6 27-29Mb (HLA)	chr6	28000000	2.7	0.1449	0.128	0.38	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR4	chr11 48-50Mb	chr11	49200000	2.2	nan	nan	nan	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR7	chr6 26-29Mb (HLA)	chr6	27500000	2.4	nan	nan	nan	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR7	chr7 117-120Mb	chr7	118600000	2.4	0.3805	0.335	2.84	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR8	chr6 130-139Mb	chr6	134700000	8.4	1.2884	1.135	58.07	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR8	chr9 131-134Mb	chr9	132600000	2.2	2.2287	1.964	87.23	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR8	chr11 48-50Mb	chr11	49000000	2.4	nan	nan	nan	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR9	chr6 62-65Mb	chr6	63300000	2.6	0.2554	0.225	0.77	GRCh37 SROH midpoint
+Schuurs2011-T3	ARMR9	chr8 47-50Mb	chr8	48500000	2.9	nan	nan	nan	GRCh37 SROH midpoint

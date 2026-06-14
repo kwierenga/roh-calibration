@@ -1,0 +1,10 @@
+# Najmabadi 2011 Nature stratified locus-rate analysis
+# n_variants_joined=356  (multi-interval=54, no-S1-match=1)
+# genome-wide median rate=1.13 cM/Mb  n_windows=2607
+# baseline: 25.0% windows at r>=1.5x; 12.1% at >=2x
+
+stratum             n   hot>=1.5x     %   p_one_sided   hot>=2.0x     %   p_one_sided
+ROH <= 3 Mb        34          17 50.0%     0.001495            10 29.4%     0.005544
+ROH <= 5 Mb        54          29 53.7%    6.276e-06            20 37.0%    2.269e-06
+ROH 5-10 Mb        73          43 58.9%    8.842e-10            23 31.5%    9.796e-06
+ROH > 10 Mb       229          44 19.2%       0.9848            16  7.0%       0.9958

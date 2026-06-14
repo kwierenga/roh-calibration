@@ -1,0 +1,43 @@
+case	gene	chrom	ROH_Mb	cMperMb	platform	L_eff_Mb	prior_pi	prior_name	posterior	decision	above_10Mb
+F399-1	NPHP5/IQCB1	chr3	8.25	0.91	array (250K-class, Hildebrandt's actual platform)	4.39	0.0625	first-cousin	0.999	FLAG	no
+F399-1	NPHP5/IQCB1	chr3	8.25	0.91	array (250K-class, Hildebrandt's actual platform)	4.39	0.0156	second-cousin / mild	0.997	FLAG	no
+F399-1	NPHP5/IQCB1	chr3	8.25	0.91	array (250K-class, Hildebrandt's actual platform)	4.39	0.005	screening / outbred	0.990	FLAG	no
+F399-1	NPHP5/IQCB1	chr3	8.25	0.91	WGS  (dense)	6.59	0.0625	first-cousin	1.000	FLAG	no
+F399-1	NPHP5/IQCB1	chr3	8.25	0.91	WGS  (dense)	6.59	0.0156	second-cousin / mild	1.000	FLAG	no
+F399-1	NPHP5/IQCB1	chr3	8.25	0.91	WGS  (dense)	6.59	0.005	screening / outbred	1.000	FLAG	no
+A1730-1	NPHS2	chr1	2.70	0.74	array (250K-class, Hildebrandt's actual platform)	1.18	0.0625	first-cousin	0.903	REVIEW	no
+A1730-1	NPHS2	chr1	2.70	0.74	array (250K-class, Hildebrandt's actual platform)	1.18	0.0156	second-cousin / mild	0.689	REVIEW	no
+A1730-1	NPHS2	chr1	2.70	0.74	array (250K-class, Hildebrandt's actual platform)	1.18	0.005	screening / outbred	0.412	BACKGROUND	no
+A1730-1	NPHS2	chr1	2.70	0.74	WGS  (dense)	1.76	0.0625	first-cousin	0.969	FLAG	no
+A1730-1	NPHS2	chr1	2.70	0.74	WGS  (dense)	1.76	0.0156	second-cousin / mild	0.881	REVIEW	no
+A1730-1	NPHS2	chr1	2.70	0.74	WGS  (dense)	1.76	0.005	screening / outbred	0.702	REVIEW	no
+A1730-2	NPHS2	chr1	2.70	0.74	array (250K-class, Hildebrandt's actual platform)	1.18	0.0625	first-cousin	0.903	REVIEW	no
+A1730-2	NPHS2	chr1	2.70	0.74	array (250K-class, Hildebrandt's actual platform)	1.18	0.0156	second-cousin / mild	0.689	REVIEW	no
+A1730-2	NPHS2	chr1	2.70	0.74	array (250K-class, Hildebrandt's actual platform)	1.18	0.005	screening / outbred	0.412	BACKGROUND	no
+A1730-2	NPHS2	chr1	2.70	0.74	WGS  (dense)	1.76	0.0625	first-cousin	0.969	FLAG	no
+A1730-2	NPHS2	chr1	2.70	0.74	WGS  (dense)	1.76	0.0156	second-cousin / mild	0.881	REVIEW	no
+A1730-2	NPHS2	chr1	2.70	0.74	WGS  (dense)	1.76	0.005	screening / outbred	0.702	REVIEW	no
+F30-1	NPHP4	chr1	2.10	2.23	array (250K-class, Hildebrandt's actual platform)	2.75	0.0625	first-cousin	0.994	FLAG	no
+F30-1	NPHP4	chr1	2.10	2.23	array (250K-class, Hildebrandt's actual platform)	2.75	0.0156	second-cousin / mild	0.976	FLAG	no
+F30-1	NPHP4	chr1	2.10	2.23	array (250K-class, Hildebrandt's actual platform)	2.75	0.005	screening / outbred	0.928	REVIEW	no
+F30-1	NPHP4	chr1	2.10	2.23	WGS  (dense)	4.13	0.0625	first-cousin	0.999	FLAG	no
+F30-1	NPHP4	chr1	2.10	2.23	WGS  (dense)	4.13	0.0156	second-cousin / mild	0.996	FLAG	no
+F30-1	NPHP4	chr1	2.10	2.23	WGS  (dense)	4.13	0.005	screening / outbred	0.988	FLAG	no
+F408	NPHP5/IQCB1	chr3	5.18	0.87	array (250K-class, Hildebrandt's actual platform)	2.64	0.0625	first-cousin	0.993	FLAG	no
+F408	NPHP5/IQCB1	chr3	5.18	0.87	array (250K-class, Hildebrandt's actual platform)	2.64	0.0156	second-cousin / mild	0.971	FLAG	no
+F408	NPHP5/IQCB1	chr3	5.18	0.87	array (250K-class, Hildebrandt's actual platform)	2.64	0.005	screening / outbred	0.914	REVIEW	no
+F408	NPHP5/IQCB1	chr3	5.18	0.87	WGS  (dense)	3.96	0.0625	first-cousin	0.999	FLAG	no
+F408	NPHP5/IQCB1	chr3	5.18	0.87	WGS  (dense)	3.96	0.0156	second-cousin / mild	0.996	FLAG	no
+F408	NPHP5/IQCB1	chr3	5.18	0.87	WGS  (dense)	3.96	0.005	screening / outbred	0.987	FLAG	no
+A237	NPHS2	chr1	2.30	0.74	array (250K-class, Hildebrandt's actual platform)	1.00	0.0625	first-cousin	0.862	REVIEW	no
+A237	NPHS2	chr1	2.30	0.74	array (250K-class, Hildebrandt's actual platform)	1.00	0.0156	second-cousin / mild	0.597	REVIEW	no
+A237	NPHS2	chr1	2.30	0.74	array (250K-class, Hildebrandt's actual platform)	1.00	0.005	screening / outbred	0.320	BACKGROUND	no
+A237	NPHS2	chr1	2.30	0.74	WGS  (dense)	1.50	0.0625	first-cousin	0.950	REVIEW	no
+A237	NPHS2	chr1	2.30	0.74	WGS  (dense)	1.50	0.0156	second-cousin / mild	0.818	REVIEW	no
+A237	NPHS2	chr1	2.30	0.74	WGS  (dense)	1.50	0.005	screening / outbred	0.587	REVIEW	no
+A825	NPHS2	chr1	2.30	0.74	array (250K-class, Hildebrandt's actual platform)	1.00	0.0625	first-cousin	0.862	REVIEW	no
+A825	NPHS2	chr1	2.30	0.74	array (250K-class, Hildebrandt's actual platform)	1.00	0.0156	second-cousin / mild	0.597	REVIEW	no
+A825	NPHS2	chr1	2.30	0.74	array (250K-class, Hildebrandt's actual platform)	1.00	0.005	screening / outbred	0.320	BACKGROUND	no
+A825	NPHS2	chr1	2.30	0.74	WGS  (dense)	1.50	0.0625	first-cousin	0.950	REVIEW	no
+A825	NPHS2	chr1	2.30	0.74	WGS  (dense)	1.50	0.0156	second-cousin / mild	0.818	REVIEW	no
+A825	NPHS2	chr1	2.30	0.74	WGS  (dense)	1.50	0.005	screening / outbred	0.587	REVIEW	no

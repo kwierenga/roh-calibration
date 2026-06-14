@@ -1,0 +1,30 @@
+# Per-SAS-subpop background null (PJL/GIH/STU/BEB/ITU)
+# chroms=chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22 children=82 PI=0.0625 GAP_TOL=1 OUTLIER_F=0.0156 (ROH>=1.0Mb)
+# prior-free Bayes factor BF(L)=c/p_background(L), c=0.368. wall=6713s
+
+Minimum 'callable' length L* (posterior>=0.95, pi=0.0625) per SAS subpop:
+subpop	n_children	n_outliers(F_ROH>0.0156)	outlier_rate	L*_all	L*_screened	delta_Mb	Hbar_gw_SAS
+PJL	41	24	58.54%	10.50	1.75	8.75	0.0200
+STU	10	3	30.00%	2.50	1.45	1.05	0.0200
+BEB	28	3	10.71%	1.65	1.55	0.10	0.0200
+ITU	3	2	66.67%	5.95	1.80	4.15	0.0200
+
+Weight of evidence log10 BF(L) at tabulated lengths (screened background):
+L_Mb	PJL	STU	BEB	ITU
+0.5	1.36	1.36	1.38	1.35
+1.0	1.92	2.01	2.00	1.90
+1.5	2.31	2.51	2.43	2.27
+2.0	2.66	3.01	2.90	2.65
+3.0	3.16	4.13	3.53	3.36
+5.0	3.99	11.57	4.85	11.57
+
+UNSCREENED log10 BF(L) at tabulated lengths (no F_ROH outlier removal):
+L_Mb	PJL	STU	BEB	ITU
+0.5	1.06	1.28	1.36	1.23
+1.0	1.32	1.77	1.96	1.60
+1.5	1.45	2.09	2.37	1.81
+2.0	1.55	2.32	2.78	1.95
+3.0	1.69	2.58	3.29	2.13
+5.0	1.90	2.86	4.09	2.36
+
+thr p_chance for posterior>=0.95: 1.29e-03. MAF filter applied uniformly via AF_SAS for all 5 subpops; H-bar approximated at SAS superpop level. PJL (Punjabi in Lahore) is the highest-consanguinity 1000G panel.

@@ -1,0 +1,43 @@
+# Locus-rate enrichment test: do published short-ROH AR cases cluster at
+# high-recombination loci, as predicted by the locus-aware calibration?
+# deCODE/Palsson 2024 sex-averaged rate map; n_windows=2607; genome-wide median = 1.13 cM/Mb.
+# baseline: 25.0% of 1 Mb windows have r >= 1.5x median (1.70); 12.1% at >= 2.0x (2.27).
+
+Per-source tally (case loci at r >= k x genome-wide median):
+
+source               n  n_hot >=1.5x  n_hot >=2.0x  n_ROH<=5Mb
+Hildebrandt2009      5             1             0           3
+Prasad2018           6             3             1           0
+Schuurs2011-T3      12             2             1          10
+COMBINED            23             6             2
+
+Binomial tests (one-sided, vs genome-wide baseline):
+  P(X >= 6 | n=23, p=0.250) at r >= 1.5x median = 0.5337
+  P(X >= 2 | n=23, p=0.121) at r >= 2.0x median = 0.7848
+
+Per-locus detail:
+
+source             case         locus                        chrom     midpoint  ROH(Mb)  r(cM/Mb)  ratio    pct  note
+Hildebrandt2009    F30-1        NPHP4                        chr1       5988000     2.10      2.06   1.82   84.2  GRCh38 gene midpoint
+Hildebrandt2009    A1730        NPHS2                        chr1     179534000     2.70      0.65   0.57   16.8  GRCh38 gene midpoint
+Hildebrandt2009    F399-1       NPHP5/IQCB1                  chr3     121750000     8.25      0.72   0.63   22.4  GRCh38 gene midpoint
+Hildebrandt2009    F408         NPHP5/IQCB1                  chr3     121750000     5.18      0.72   0.63   22.4  GRCh38 gene midpoint
+Hildebrandt2009    A237/A825    NPHS2 R138Q founder          chr1     179534000     2.30      0.65   0.57   16.8  GRCh38 gene midpoint
+Prasad2018         ROH31        NDUFV2                       chr18      9100000       NA      3.14   2.76   96.6  GRCh38 gene midpoint
+Prasad2018         —            GJB2                         chr13     20700000       NA      2.10   1.85   84.8  GRCh38 gene midpoint
+Prasad2018         —            TPP1                         chr11      6600000       NA      1.99   1.75   82.7  GRCh38 gene midpoint
+Prasad2018         —            SLC25A15                     chr13     40800000       NA      1.17   1.03   52.0  GRCh38 gene midpoint
+Prasad2018         —            TYR                          chr11     89000000       NA      0.42   0.37    3.8  GRCh38 gene midpoint
+Prasad2018         —            PCCB                         chr3     136000000       NA      0.57   0.50   11.5  GRCh38 gene midpoint
+Schuurs2011-T3     ARMR1        chr16 78-80Mb                chr16     79500000     2.60      2.43   2.14   90.5  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR1        chr19 39-50Mb (MRT11)        chr19     44000000    11.00      1.34   1.18   61.0  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR4        chr4 32-35Mb                 chr4      33500000     2.50      0.66   0.58   17.4  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR4        chr6 27-29Mb (HLA)           chr6      28000000     2.70      0.14   0.13    0.4  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR4        chr11 48-50Mb                chr11     49200000     2.20       nan    nan    nan  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR7        chr6 26-29Mb (HLA)           chr6      27500000     2.40       nan    nan    nan  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR7        chr7 117-120Mb               chr7     118600000     2.40      0.38   0.34    2.8  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR8        chr6 130-139Mb               chr6     134700000     8.40      1.29   1.14   58.1  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR8        chr9 131-134Mb               chr9     132600000     2.20      2.23   1.96   87.2  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR8        chr11 48-50Mb                chr11     49000000     2.40       nan    nan    nan  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR9        chr6 62-65Mb                 chr6      63300000     2.60      0.26   0.23    0.8  GRCh37 SROH midpoint
+Schuurs2011-T3     ARMR9        chr8 47-50Mb                 chr8      48500000     2.90       nan    nan    nan  GRCh37 SROH midpoint

@@ -52,7 +52,7 @@ PANEL = HERE / "samples_2504_pop.panel"
 OUT_REL = HERE / "calibration_reliability.tsv"
 OUT_SUMMARY = HERE / "calibration_summary.txt"
 
-POPULATIONS = ["EUR", "AFR"]            # extremes for v1
+POPULATIONS = ["EUR", "AFR", "EAS", "SAS", "AMR"]   # all 5 superpops (genome-wide); EUR/AFR were the v1 extremes
 # ---- knobs ----
 MAF_MIN = 0.05
 BLOCK_CM = 0.5
@@ -327,8 +327,15 @@ def main():
 
     summary = {}
     with OUT_REL.open("w", encoding="utf-8") as fh, OUT_SUMMARY.open("w", encoding="utf-8") as fs:
+        gw = len(chroms) >= 20
         fh.write("population\tbin\tmean_posterior\tobs_frac_autozygous\tn\n")
         fs.write("# Ground-truth calibration of the ROH autozygosity posterior\n")
+        if gw:
+            fs.write(f"# GENOME-WIDE: {len(chroms)} autosomes -- these supersede the "
+                     "earlier chr22 prototype L* values.\n")
+        else:
+            fs.write("# PROTOTYPE: chr22 only -- a genome-wide rerun is pending and will "
+                     "supersede the specific L* values below. Do NOT cite these as final.\n")
         fs.write(f"# chroms={','.join(chroms)} N_TRIALS={N_TRIALS}/pop PI={PI} "
                  f"GAP_TOL={GAP_TOL} eps={GENO_ERR} N_REF={N_REF} N_TEST={N_TEST}\n")
         fs.write(f"# emission c=(1-eps)^1000={C_IBD:.3f}; implant mean {IMPLANT_MEAN} Mb\n\n")
@@ -358,11 +365,27 @@ def main():
             fs.write(f"{p}: scored={N}  ground-truth L*(FDR=5%)={gtL:.2f} Mb  | "
                      f"FDR@0.7Mb={summary[p]['fdr07']:.3f}  FDR@1.5Mb={summary[p]['fdr15']:.3f}  "
                      f"| analytic-posterior ECE={ece:.3f}  FDR@post>=0.95={fdr95:.3f}\n")
-        fs.write("\nReading: ground-truth L* should match the empirical ~1.5 Mb "
-                 "(script 18), not the analytic ~0.7 Mb; FDR@0.7Mb >> 5% and "
-                 "FDR@1.5Mb ~ 5% confirms the empirical correction. The analytic "
-                 "posterior's high ECE / FDR@0.95 quantifies its over-confidence at "
-                 "the realistic gap=1 operating point.\n")
+        if summary:
+            gtLs = [s["gtL"] for s in summary.values() if not math.isnan(s["gtL"])]
+            eces = [s["ece"] for s in summary.values()]
+            f15s = [s["fdr15"] for s in summary.values() if not math.isnan(s["fdr15"])]
+            f95s = [s["fdr95"] for s in summary.values() if not math.isnan(s["fdr95"])]
+            scope = f"genome-wide ({len(chroms)} autosomes)" if gw else f"{','.join(chroms)}"
+            lo_p = min(summary, key=lambda k: summary[k]["gtL"]) if gtLs else "?"
+            hi_p = max(summary, key=lambda k: summary[k]["gtL"]) if gtLs else "?"
+            fs.write(f"\nReading ({scope}): the ground-truth L*(FDR=5%) is population-"
+                     f"dependent, ranging {min(gtLs):.2f}-{max(gtLs):.2f} Mb "
+                     f"({lo_p} shortest, {hi_p} longest), bracketed by the analytic "
+                     "(~0.7 Mb) and empirical (~1.5 Mb) thresholds. The empirical "
+                     f"~1.5 Mb operating point gives realized FDR@1.5Mb = "
+                     f"{min(f15s)*100:.1f}-{max(f15s)*100:.1f}% "
+                     f"(target 5%), so it is {'CONSERVATIVE' if max(f15s) < 0.05 else 'near/above target'} "
+                     "-- a defensible clinical choice trading sensitivity for specificity. "
+                     "The analytic *posterior*, separately, is over-confident as a "
+                     f"calibrated probability (ECE {min(eces):.2f}-{max(eces):.2f}; among "
+                     f"post>=0.95 calls realized FDR {min(f95s)*100:.0f}-{max(f95s)*100:.0f}%), "
+                     "so the closed-form law should be used for intuition, not for "
+                     "clinical probability statements.\n")
         fs.write("\n(Calibration is conditional on the assumed tract-length "
                  "distribution and prior; negative class from same-panel pairs; an "
                  "independent coalescent null is the planned cross-check.)\n")

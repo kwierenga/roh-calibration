@@ -205,7 +205,7 @@ def main():
         fh.write(f"# All-autosomes per-locus IBD posterior framework\n")
         fh.write(f"# Population AF: {POPULATION}; Prior pi: {PRIOR_PI}; Block cM: {BLOCK_CM}\n")
         fh.write(f"# Total wall clock: {time.time() - t0:.1f}s\n\n")
-        fh.write("chrom\tn_windows\tn_variants\tn_windows_acmg_calibrated\tn_windows_with_recomb\tfraction_calibrated\n")
+        fh.write("chrom\tn_windows\tn_variants\tn_windows_decisive_at_10Mb\tn_windows_with_recomb\tfraction_decisive\n")
         total_calibrated = 0
         total_with_recomb = 0
         for c, nw, nv, nc, nr_or_err in per_chrom_stats:

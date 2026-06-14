@@ -1,0 +1,98 @@
+# Hildebrandt et al. 2009 PLoS Genet 5:e1000353 -- calibrated scoring of the published solved outbred cases
+# ancestry=EUR  median rate=1.13 cM/Mb  conventional cutoff (lab practice) = 10.0 Mb
+# (the cases below are real patients with KNOWN causative homozygous mutations; the question is whether each ROH would
+# be flagged for autozygosity-mapping work-up under current practice vs. the calibrated scorer.)
+
+
+== F399-1  gene NPHP5/IQCB1  chr3  ROH 8.25 Mb ==
+   conventional 10 Mb cutoff: ROH would be DISCARDED
+   --- array (250K-class, Hildebrandt's actual platform) ---
+     prior pi=0.0625 (first-cousin           ): r=0.91 cM/Mb  L_eff=4.39 Mb  posterior=0.999  -> FLAG
+     prior pi=0.0156 (second-cousin / mild   ): r=0.91 cM/Mb  L_eff=4.39 Mb  posterior=0.997  -> FLAG
+     prior pi=0.0050 (screening / outbred    ): r=0.91 cM/Mb  L_eff=4.39 Mb  posterior=0.990  -> FLAG
+   --- WGS  (dense) ---
+     prior pi=0.0625 (first-cousin           ): r=0.91 cM/Mb  L_eff=6.59 Mb  posterior=1.000  -> FLAG
+     prior pi=0.0156 (second-cousin / mild   ): r=0.91 cM/Mb  L_eff=6.59 Mb  posterior=1.000  -> FLAG
+     prior pi=0.0050 (screening / outbred    ): r=0.91 cM/Mb  L_eff=6.59 Mb  posterior=1.000  -> FLAG
+
+== A1730-1  gene NPHS2  chr1  ROH 2.70 Mb ==
+   conventional 10 Mb cutoff: ROH would be DISCARDED
+   --- array (250K-class, Hildebrandt's actual platform) ---
+     prior pi=0.0625 (first-cousin           ): r=0.74 cM/Mb  L_eff=1.18 Mb  posterior=0.903  -> REVIEW
+     prior pi=0.0156 (second-cousin / mild   ): r=0.74 cM/Mb  L_eff=1.18 Mb  posterior=0.689  -> REVIEW
+     prior pi=0.0050 (screening / outbred    ): r=0.74 cM/Mb  L_eff=1.18 Mb  posterior=0.412  -> BACKGROUND
+   --- WGS  (dense) ---
+     prior pi=0.0625 (first-cousin           ): r=0.74 cM/Mb  L_eff=1.76 Mb  posterior=0.969  -> FLAG
+     prior pi=0.0156 (second-cousin / mild   ): r=0.74 cM/Mb  L_eff=1.76 Mb  posterior=0.881  -> REVIEW
+     prior pi=0.0050 (screening / outbred    ): r=0.74 cM/Mb  L_eff=1.76 Mb  posterior=0.702  -> REVIEW
+
+== A1730-2  gene NPHS2  chr1  ROH 2.70 Mb ==
+   conventional 10 Mb cutoff: ROH would be DISCARDED
+   --- array (250K-class, Hildebrandt's actual platform) ---
+     prior pi=0.0625 (first-cousin           ): r=0.74 cM/Mb  L_eff=1.18 Mb  posterior=0.903  -> REVIEW
+     prior pi=0.0156 (second-cousin / mild   ): r=0.74 cM/Mb  L_eff=1.18 Mb  posterior=0.689  -> REVIEW
+     prior pi=0.0050 (screening / outbred    ): r=0.74 cM/Mb  L_eff=1.18 Mb  posterior=0.412  -> BACKGROUND
+   --- WGS  (dense) ---
+     prior pi=0.0625 (first-cousin           ): r=0.74 cM/Mb  L_eff=1.76 Mb  posterior=0.969  -> FLAG
+     prior pi=0.0156 (second-cousin / mild   ): r=0.74 cM/Mb  L_eff=1.76 Mb  posterior=0.881  -> REVIEW
+     prior pi=0.0050 (screening / outbred    ): r=0.74 cM/Mb  L_eff=1.76 Mb  posterior=0.702  -> REVIEW
+
+== F30-1  gene NPHP4  chr1  ROH 2.10 Mb ==
+   conventional 10 Mb cutoff: ROH would be DISCARDED
+   --- array (250K-class, Hildebrandt's actual platform) ---
+     prior pi=0.0625 (first-cousin           ): r=2.23 cM/Mb  L_eff=2.75 Mb  posterior=0.994  -> FLAG
+     prior pi=0.0156 (second-cousin / mild   ): r=2.23 cM/Mb  L_eff=2.75 Mb  posterior=0.976  -> FLAG
+     prior pi=0.0050 (screening / outbred    ): r=2.23 cM/Mb  L_eff=2.75 Mb  posterior=0.928  -> REVIEW
+   --- WGS  (dense) ---
+     prior pi=0.0625 (first-cousin           ): r=2.23 cM/Mb  L_eff=4.13 Mb  posterior=0.999  -> FLAG
+     prior pi=0.0156 (second-cousin / mild   ): r=2.23 cM/Mb  L_eff=4.13 Mb  posterior=0.996  -> FLAG
+     prior pi=0.0050 (screening / outbred    ): r=2.23 cM/Mb  L_eff=4.13 Mb  posterior=0.988  -> FLAG
+
+== F408  gene NPHP5/IQCB1  chr3  ROH 5.18 Mb ==
+   conventional 10 Mb cutoff: ROH would be DISCARDED
+   --- array (250K-class, Hildebrandt's actual platform) ---
+     prior pi=0.0625 (first-cousin           ): r=0.87 cM/Mb  L_eff=2.64 Mb  posterior=0.993  -> FLAG
+     prior pi=0.0156 (second-cousin / mild   ): r=0.87 cM/Mb  L_eff=2.64 Mb  posterior=0.971  -> FLAG
+     prior pi=0.0050 (screening / outbred    ): r=0.87 cM/Mb  L_eff=2.64 Mb  posterior=0.914  -> REVIEW
+   --- WGS  (dense) ---
+     prior pi=0.0625 (first-cousin           ): r=0.87 cM/Mb  L_eff=3.96 Mb  posterior=0.999  -> FLAG
+     prior pi=0.0156 (second-cousin / mild   ): r=0.87 cM/Mb  L_eff=3.96 Mb  posterior=0.996  -> FLAG
+     prior pi=0.0050 (screening / outbred    ): r=0.87 cM/Mb  L_eff=3.96 Mb  posterior=0.987  -> FLAG
+
+== A237  gene NPHS2  chr1  ROH 2.30 Mb ==
+   conventional 10 Mb cutoff: ROH would be DISCARDED
+   --- array (250K-class, Hildebrandt's actual platform) ---
+     prior pi=0.0625 (first-cousin           ): r=0.74 cM/Mb  L_eff=1.00 Mb  posterior=0.862  -> REVIEW
+     prior pi=0.0156 (second-cousin / mild   ): r=0.74 cM/Mb  L_eff=1.00 Mb  posterior=0.597  -> REVIEW
+     prior pi=0.0050 (screening / outbred    ): r=0.74 cM/Mb  L_eff=1.00 Mb  posterior=0.320  -> BACKGROUND
+   --- WGS  (dense) ---
+     prior pi=0.0625 (first-cousin           ): r=0.74 cM/Mb  L_eff=1.50 Mb  posterior=0.950  -> REVIEW
+     prior pi=0.0156 (second-cousin / mild   ): r=0.74 cM/Mb  L_eff=1.50 Mb  posterior=0.818  -> REVIEW
+     prior pi=0.0050 (screening / outbred    ): r=0.74 cM/Mb  L_eff=1.50 Mb  posterior=0.587  -> REVIEW
+
+== A825  gene NPHS2  chr1  ROH 2.30 Mb ==
+   conventional 10 Mb cutoff: ROH would be DISCARDED
+   --- array (250K-class, Hildebrandt's actual platform) ---
+     prior pi=0.0625 (first-cousin           ): r=0.74 cM/Mb  L_eff=1.00 Mb  posterior=0.862  -> REVIEW
+     prior pi=0.0156 (second-cousin / mild   ): r=0.74 cM/Mb  L_eff=1.00 Mb  posterior=0.597  -> REVIEW
+     prior pi=0.0050 (screening / outbred    ): r=0.74 cM/Mb  L_eff=1.00 Mb  posterior=0.320  -> BACKGROUND
+   --- WGS  (dense) ---
+     prior pi=0.0625 (first-cousin           ): r=0.74 cM/Mb  L_eff=1.50 Mb  posterior=0.950  -> REVIEW
+     prior pi=0.0156 (second-cousin / mild   ): r=0.74 cM/Mb  L_eff=1.50 Mb  posterior=0.818  -> REVIEW
+     prior pi=0.0050 (screening / outbred    ): r=0.74 cM/Mb  L_eff=1.50 Mb  posterior=0.587  -> REVIEW
+
+======================================================================
+Summary (the clinical wedge):
+  All 7 scored probands have a causative ROH < 10.0 Mb (i.e., would be DISCARDED
+  under current 10 Mb clinical-lab practice). They comprise 5 'detected' outbred
+  probands across 4 families that yielded the molecular diagnosis by homozygosity
+  mapping (F399-1 NPHP5 8.25 Mb; A1730-1/-2 NPHS2 2.70 Mb; F30-1 NPHP4 2.10 Mb;
+  F408 NPHP5 5.18 Mb), plus 2 NPHS2 founder probands (A237/A825, 2.30 Mb) that
+  required the founder-haplotype approach.
+  Calibrated scoring at a first-cousin prior, among the 5 detected probands:
+    - array (250K-class, Hildebrandt's actual platform): 3/5 FLAG
+      (F399-1, F30-1, F408); the two A1730 sibs are REVIEW (~0.90).
+    - WGS (dense): 5/5 FLAG.
+  F30-1 is the headline -- a 2.10 Mb ROH at chr1p36, a notoriously high-
+  recombination telomeric region, that would never enter the differential under
+  a 10 Mb threshold, yet FLAGs even at a screening prior of 0.005 on WGS.
